@@ -1,7 +1,4 @@
 # ETL-Data-Integration-and-Management-System
-This project implements an ETL (Extract, Transform, Load) process to integrate data from an Excel file into a SQL database. It manages information about customers, products, orders, and items, including operations like calculating credit limits based on customer status.
-
-# ETL and Order Management Project
 
 This project implements an ETL (Extract, Transform, Load) process that integrates data from an Excel file into a SQL database, as well as manages information related to customers, products, orders, and order items. The system extracts data from an Excel file, transforms the data into the proper format for a database, and loads it into related tables. The project also includes data models representing customers, products, orders, and order items, with the ability to perform operations like calculating credit limits based on customer status.
 
