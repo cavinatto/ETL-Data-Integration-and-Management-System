@@ -40,19 +40,32 @@ The system consists of the following main parts:
   - `dotenv`
   - `openpyxl` (for reading Excel files)
 
+---
 
-## Installation
+## **Installation**
 
-Clone this repository to your local machine:
+1. Clone this repository to your local machine:
 
 ```bash
 git clone https://github.com/cavinatto/ETL-Data-Integration-and-Management-System
 cd ETL-Data-Integration-and-Management-System
 ```
-Install the required dependencies using pip:
+2. Install the required dependencies using pip:
 
 ```bash
 pip install -r requirements.txt
 ```
 
+---
+
+## **Environment Configuration**
+
+1. Create a .env file in the root of the project with the following database credentials:
+
+```bash
+USUARIO=your_username
+SENHA=your_password
+HOST=your_host
+BANCO_DE_DADOS=your_database
+```
 
