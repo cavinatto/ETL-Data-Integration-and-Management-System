@@ -11,9 +11,9 @@ This project implements an ETL (Extract, Transform, Load) process that integrate
 - [Installation](#installation)
 - [Environment Configuration](#environment-configuration)
 - [How to Use](#how-to-use)
-  - [Running Migrations](#running-migrations)
-  - [Running the ETL](#running-the-etl)
-  - [Data Models](#data-models)
+  - [Running Migrations]
+  - [Running the ETL]
+  - [Data Models]
 
 ---
 
