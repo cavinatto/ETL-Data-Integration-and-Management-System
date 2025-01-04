@@ -43,10 +43,15 @@ The system consists of the following main parts:
   - `dotenv`
   - `openpyxl` (for reading Excel files)
 
-## **Installation**
+## Installation
 
-1. Clone this repository to your local machine:
+Clone este repositório para sua máquina local:
 
+```bash
 git clone https://github.com/your-username/etl-order-management.git
 cd etl-order-management
+
+Instale as dependências necessárias utilizando pip:
+
+pip install -r requirements.txt
 
