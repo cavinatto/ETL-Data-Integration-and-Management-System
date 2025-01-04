@@ -122,5 +122,3 @@ The data models represent the following tables:
 - **ItemPedido**: Stores items in each order, including quantity and associated product (id, pedido_id, produto_id, quantidade).
 
 Each model is represented as a SQLAlchemy class and is mapped to a table in the database.
-
----
