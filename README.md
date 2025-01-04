@@ -47,3 +47,9 @@ To install the required libraries, use the following command:
 
 ```bash
 pip install -r requirements.txt
+
+Installation
+Clone this repository to your local machine:
+
+git clone https://github.com/your-username/etl-order-management.git
+cd etl-order-management
