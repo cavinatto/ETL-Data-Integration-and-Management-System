@@ -40,7 +40,6 @@ The system consists of the following main parts:
   - `dotenv`
   - `openpyxl` (for reading Excel files)
 
-## Installation
 
 ## Installation
 
