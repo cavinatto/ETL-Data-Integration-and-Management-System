@@ -49,4 +49,10 @@ Clone this repository to your local machine:
 git clone https://github.com/cavinatto/ETL-Data-Integration-and-Management-System
 cd ETL-Data-Integration-and-Management-System
 ```
+Install the required dependencies using pip:
+
+```bash
+pip install -r requirements.txt
+```
+
 
