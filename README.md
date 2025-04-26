@@ -19,7 +19,7 @@ Este projeto implementa um processo ETL (Extração, Transformação e Carga) qu
 - Dependências:
   - `pandas`, `sqlalchemy`, `pyodbc`, `alembic`, `dotenv`, `openpyxl`
 - Banco de Dados:
-  - `SQLite`
+  - `SQLite (o banco será criado automaticamente)`
 ---
 
 ## **Instalação**
@@ -67,5 +67,46 @@ etl.run()
 ```
 
 2. **Modelos de Dados**:
-   - O sistema utiliza modelos SQLAlchemy para representar as tabelas `Produto`, `Cliente`, `Pedido` e `ItemPedido`. Mais detalhes estão disponíveis no arquivo `models.py`.
+   - O sistema utiliza modelos SQLAlchemy para representar as tabelas `Produto`, `Cliente`, `Pedido` e `ItemPedido`. Abaixo está a estrutura de cada tabela:
+
+### **Produto**
+Armazena informações sobre os produtos.
+
+| Campo        | Tipo         | Descrição                       |
+|--------------|--------------|---------------------------------|
+| `id`         | `INTEGER`    | ID único do produto             |
+| `nome`       | `VARCHAR`    | Nome do produto                 |
+| `categoria`  | `VARCHAR`    | Categoria do produto            |
+| `preco`      | `FLOAT`      | Preço do produto                |
+
+### **Cliente**
+Armazena informações sobre os clientes.
+
+| Campo         | Tipo        | Descrição                             |
+|---------------|-------------|---------------------------------------|
+| `id`          | `INTEGER`   | ID único do cliente                   |
+| `nome`        | `VARCHAR`   | Nome do cliente                       |
+| `endereco`    | `VARCHAR`   | Endereço do cliente                   |
+| `telefone`    | `VARCHAR`   | Telefone do cliente                   |
+| `status`      | `VARCHAR`   | Status do cliente (Ex: "Ativo", "Inativo") |
+| `limite_credito` | `FLOAT`   | Limite de crédito do cliente (calculado com base no status) |
+
+### **Pedido**
+Armazena informações sobre os pedidos realizados pelos clientes.
+
+| Campo       | Tipo        | Descrição                               |
+|-------------|-------------|-----------------------------------------|
+| `id`        | `INTEGER`   | ID único do pedido                      |
+| `cliente_id`| `INTEGER`   | ID do cliente (chave estrangeira)       |
+| `data`      | `DATE`      | Data do pedido                          |
+
+### **ItemPedido**
+Armazena os itens de cada pedido, incluindo a quantidade de produtos e o produto associado.
+
+| Campo       | Tipo        | Descrição                               |
+|-------------|-------------|-----------------------------------------|
+| `id`        | `INTEGER`   | ID único do item do pedido              |
+| `pedido_id` | `INTEGER`   | ID do pedido (chave estrangeira)        |
+| `produto_id`| `INTEGER`   | ID do produto (chave estrangeira)       |
+| `quantidade`| `INTEGER`   | Quantidade do produto no pedido         |
 
