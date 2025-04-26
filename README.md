@@ -66,47 +66,17 @@ etl = ETL(db_url="seu_banco_de_dados", file_path="caminho/para/excel")
 etl.run()
 ```
 
-2. **Modelos de Dados**:
-   - O sistema utiliza modelos SQLAlchemy para representar as tabelas `Produto`, `Cliente`, `Pedido` e `ItemPedido`. Abaixo está a estrutura de cada tabela:
+2. **Modelos de Dados:**
 
-### **Produto**
-Armazena informações sobre os produtos.
+  - O sistema utiliza modelos SQLAlchemy para representar as tabelas do banco de dados:
 
-| Campo        | Tipo         | Descrição                       |
-|--------------|--------------|---------------------------------|
-| `id`         | `INTEGER`    | ID único do produto             |
-| `nome`       | `VARCHAR`    | Nome do produto                 |
-| `categoria`  | `VARCHAR`    | Categoria do produto            |
-| `preco`      | `FLOAT`      | Preço do produto                |
+    - **Produto:** Contém informações sobre produtos (id, nome, categoria, preço).
 
-### **Cliente**
-Armazena informações sobre os clientes.
+    - **Cliente:** Contém informações sobre clientes, incluindo limite de crédito baseado no status (id, nome, endereço, telefone, status, limite de crédito).
 
-| Campo         | Tipo        | Descrição                             |
-|---------------|-------------|---------------------------------------|
-| `id`          | `INTEGER`   | ID único do cliente                   |
-| `nome`        | `VARCHAR`   | Nome do cliente                       |
-| `endereco`    | `VARCHAR`   | Endereço do cliente                   |
-| `telefone`    | `VARCHAR`   | Telefone do cliente                   |
-| `status`      | `VARCHAR`   | Status do cliente (Ex: "Ativo", "Inativo") |
-| `limite_credito` | `FLOAT`   | Limite de crédito do cliente (calculado com base no status) |
+    - **Pedido:** Contém informações sobre os pedidos, associando cada pedido a um cliente (id, cliente_id, data).
 
-### **Pedido**
-Armazena informações sobre os pedidos realizados pelos clientes.
+    - **ItemPedido:** Contém informações sobre os itens de cada pedido, incluindo quantidade e produto associado (id, pedido_id, produto_id, quantidade).
 
-| Campo       | Tipo        | Descrição                               |
-|-------------|-------------|-----------------------------------------|
-| `id`        | `INTEGER`   | ID único do pedido                      |
-| `cliente_id`| `INTEGER`   | ID do cliente (chave estrangeira)       |
-| `data`      | `DATE`      | Data do pedido                          |
-
-### **ItemPedido**
-Armazena os itens de cada pedido, incluindo a quantidade de produtos e o produto associado.
-
-| Campo       | Tipo        | Descrição                               |
-|-------------|-------------|-----------------------------------------|
-| `id`        | `INTEGER`   | ID único do item do pedido              |
-| `pedido_id` | `INTEGER`   | ID do pedido (chave estrangeira)        |
-| `produto_id`| `INTEGER`   | ID do produto (chave estrangeira)       |
-| `quantidade`| `INTEGER`   | Quantidade do produto no pedido         |
+Cada modelo é representado como uma classe do SQLAlchemy e mapeado para uma tabela no banco de dados. O modelo de Cliente inclui uma lógica para calcular o limite de crédito com base no status do cliente, que pode ser "bom", "médio" ou "ruim", e o modelo ItemPedido inclui funções para calcular o total de pedidos e devoluções.
 
